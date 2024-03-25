@@ -1,0 +1,34 @@
+pipeline:
+  name: ttt
+  identifier: ttt
+  projectIdentifier: default_project
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: githubxyun
+        repoName: xyunl
+        build: <+input>
+  stages:
+    - stage:
+        name: ceshi
+        identifier: ceshi
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Docker
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Run_1
+                  identifier: Run_1
+                  spec:
+                    shell: Sh
